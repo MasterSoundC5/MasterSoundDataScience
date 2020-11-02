@@ -26,7 +26,7 @@ class AlbumListResource(Resource):
                     r = requests.get(r.json()['albums']['next'], headers=header)
                     data = r.json()['albums']['items']
                     result.extend(get_albums(data))
-                back_response = requests.post('http://localhost:5000/api/albums/new-releases', json=result)
+                back_response = requests.post('https://mastersound-backend.azurewebsites.net/api/albums/new-releases', json=result)
                 if back_response.status_code == 201:
                     return {'msg': 'Success.'}, 201
                 else:
