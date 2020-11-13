@@ -3,7 +3,8 @@ from datetime import timedelta
 
 from app.spotify_api import get_auth_header
 
-
+# TODO:
+# This method is very large
 def get_albums(data):
     result = []
     for item in data:
